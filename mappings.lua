@@ -21,12 +21,6 @@ M.mappings = {
       end,
       "Toggle floating term",
     },
-    ["<leader>th"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "New horizontal term",
-    },
   },
 }
 
@@ -38,6 +32,14 @@ M.crates = {
       end,
       "update crates"
     }
+  }
+}
+
+M.hop = {
+  n = {
+    ["<leader>ht"] = {":HopWordMW<CR>", opts = { silent = true }},
+    ["<leader>hl"] = {":HopLine<CR>", opts = { silent = true }},
+    ["<leader>hT"] = {":HopChar2MW<CR>",  opts = { silent = true }},
   }
 }
 
