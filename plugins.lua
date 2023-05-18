@@ -82,7 +82,7 @@ local plugins = {
     config = function()
       require('hop').setup({})
       vim.api.nvim_set_keymap("n", "<leader>ht", ":HopWordMW<CR>", {})
-      vim.api.nvim_set_keymap("n", "<leader>hl", ":HopLines<CR>", {})
+      vim.api.nvim_set_keymap("n", "<leader>hl", ":HopLine<CR>", {})
       vim.api.nvim_set_keymap("n", "<leader>hT", ":HopChar2MW<CR>", {})
     end
   }
