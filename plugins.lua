@@ -76,6 +76,16 @@ local plugins = {
       return M
     end
   },
+  {
+    "phaazon/hop.nvim",
+    lazy = false,
+    config = function()
+      require('hop').setup({})
+      vim.api.nvim_set_keymap("n", "<leader>ht", ":HopWordMW<CR>", {})
+      vim.api.nvim_set_keymap("n", "<leader>hl", ":HopLines<CR>", {})
+      vim.api.nvim_set_keymap("n", "<leader>hT", ":HopChar2MW<CR>", {})
+    end
+  }
 }
 
 return plugins

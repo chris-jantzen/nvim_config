@@ -5,7 +5,7 @@ M.mappings = {
     ["H"] = {"<cmd>:bprev<CR>", "Go to previous buffer", opts = {silent = true}},
     ["L"] = {"<cmd>:bnext<CR>", "Go to next buffer", opts = {silent = true}},
     ["<leader>q"] = {"<cmd>wqa<CR>", "Save and close all buffers" },
-    ["<leader>Q"] = {"<cmd>qa<CR>", "Save and close all buffers" },
+    ["<leader>Q"] = {"<cmd>qa<CR>", "Close all buffers" },
     ["<A-f>"] = {
       function()
         require("nvterm.terminal").toggle "float"
@@ -20,6 +20,12 @@ M.mappings = {
         require("nvterm.terminal").toggle "float"
       end,
       "Toggle floating term",
+    },
+    ["<leader>th"] = {
+      function()
+        require("nvterm.terminal").new "horizontal"
+      end,
+      "New horizontal term",
     },
   },
 }
