@@ -1,4 +1,5 @@
 vim.g.vscode_snippets_path = "/Users/chrisjantzen/Library/Application Support/Code/User/snippets"
+vim.opt.relativenumber = true
 
 if vim.g.neovide then
   vim.o.guifont = "Hack Nerd Font Mono:h18"
