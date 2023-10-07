@@ -35,14 +35,6 @@ M.crates = {
   }
 }
 
-M.hop = {
-  n = {
-    ["<leader>ht"] = {":HopWordMW<CR>", opts = { silent = true }},
-    ["<leader>hl"] = {":HopLine<CR>", opts = { silent = true }},
-    ["<leader>hT"] = {":HopChar2MW<CR>",  opts = { silent = true }},
-  }
-}
-
 M.tmux = {
   n = {
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
