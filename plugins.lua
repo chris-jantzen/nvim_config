@@ -14,6 +14,20 @@ local plugins = {
     end
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
+      -- ensure_installed = {
+      --   "codelldb"
+      -- },
+    }
+  },
+  {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
@@ -42,7 +56,11 @@ local plugins = {
         "html-lsp",
         "dockerfile-language-server",
         "prettier",
-        "js-debug-adapter"
+        "js-debug-adapter",
+        "clangd",
+        "clang-format",
+        "codelldb",
+        "svelte-language-server"
       }
     }
   },
@@ -60,6 +78,10 @@ local plugins = {
         "toml",
         "json",
         "diff",
+        "cpp",
+        "c",
+        "lua",
+        "svelte",
       }
     }
   },
@@ -99,13 +121,6 @@ local plugins = {
       local M = require "plugins.configs.cmp"
       table.insert(M.sources, {name = "crates"})
       return M
-    end
-  },
-  {
-    "phaazon/hop.nvim",
-    lazy = false,
-    config = function()
-      require('hop').setup({})
     end
   },
   {
@@ -181,6 +196,13 @@ local plugins = {
     optional = true,
     opts = { integrations = { leap = true } },
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  }
 }
 
 return plugins
